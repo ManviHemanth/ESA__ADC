@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manvi Hemanth - Works & Cooking Wireframe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Aboreto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #5C85FA;
+      padding: 2rem 4rem;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6rem;
+    }
+
+    .logo {
+      font-family: 'poppins', serif;
+      font-size: 1.5rem;
+      color: #ffffff;
+    }
+
+    .nav {
+      display: flex;
+      gap: 2.5rem;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #ffffff;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: black;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      position: relative;
+      padding-bottom: 0.25rem;
+      color: #ffffff;
+    }
+
+    .nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: #f4bf20;
+      transition: width 0.3s ease;
+    }
+
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav a.active::after {
+      width: 100%;
+    }
+
+    .content-wrapper {
+      margin-left: 2rem;
+      position: relative;
+    }
+
+    .number {
+      font-family: 'Poppins', sans-serif;
+      font-size: 300px;
+      font-weight: 600;
+      color: #ffffff;
+      opacity: 0.5;
+      position: absolute;
+      top: -2rem;
+      left: 0;
+      line-height: 1;
+      z-index: 1;
+    }
+
+    .text-content {
+      position: relative;
+      z-index: 2;
+      margin-left: 22rem;
+    }
+
+    .description {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 1.25rem;
+      max-width: 800px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      margin-left: 40px;
+      margin-top: 20px;
+      text-align: justify;
+      color: #fff;
+    }
+
+    .title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 4rem;
+      font-weight: 300;
+      line-height: 1.6;
+      margin-left: 40px;
+      margin-top: 30px;
+      line-height: 120px;
+      color: #000000;
+    }
+
+    .seamless {
+      font-family: "Zapfino", cursive;
+      color: #ffffff;
+      display: inline;
+      font-size: 4.5rem;
+    }
+
+    .screens-image {
+      width: 100%; 
+      max-width: 100%; 
+      height: auto;
+      border-radius: 1.5rem;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .new-footer {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .connect-text {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 10px 40px;
+      background-color: transparent;
+      color: #EBBB74;
+      border: 2px solid #EBBB74;
+      border-radius: 25px;
+      font-size: 18px;
+      text-decoration: none;
+      margin-bottom: 30px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .contact-button:hover {
+      background-color: #EBBB74;
+      color: #000;
+    }
+
+    .social-links {
+      margin-bottom: 30px;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .social-links img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background-color: #333;
+      margin-bottom: 20px;
+    }
+
+    .author {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .copyright {
+      font-size: 14px;
+      color: #9D9B9B;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .back-to-top-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      background-color: transparent;
+      color: #fff;
+      text-decoration: none;
+      border: 2px solid #EBBB74;
+      border-radius: 25px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    .back-to-top-btn:hover {
+      background-color: #EBBB74;
+      color: #000;
+    }
+
+    .back-to-top-btn img {
+      width: 20px;
+      height: 20px;
+      margin-left: 8px;
+    }
+
+    @media (max-width: 1200px) {
+      .text-content {
+        margin-left: 15rem;
+      }
+
+      .title {
+        font-size: 3rem;
+      }
+
+      .logo {
+        margin-left: 0;
+        font-size: 1.2rem;
+    }
+
+      .number {
+        font-size: 180px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem 2rem;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav {
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .content-wrapper {
+        margin-left: 0;
+      }
+
+      .text-content {
+        margin-left: 2rem;
+      }
+
+      .title {
+        font-size: 2.5rem;
+        margin-left: 10px;
+      }
+
+      .description {
+        margin-left: 10px;
+        font-size: 1.1rem;
+      }
+
+      .number {
+        font-size: 140px;
+        left: 10px;
+      }
+
+      .new-footer {
+        padding: 20px 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .text-content {
+        margin-left: 1rem;
+      }
+
+      .title {
+        font-size: 2rem;
+        margin-left: 5px;
+      }
+
+      .description {
+        margin-left: 5px;
+        font-size: 1rem;
+      }
+
+      .number {
+        font-size: 100px;
+      }
+
+      .contact-button {
+        padding: 8px 20px;
+        font-size: 14px;
+      }
+
+      .back-to-top-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Manvi Hemanth</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About me</a>
+      <a href="work.html" class="active">Works</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="content-wrapper">
+    <div class="number">02</div>
+    
+    <div class="text-content">
+      <p class="description">
+        Introducing Comfort Rights, a UI/UX app designed to enhance the bus stand experience. This app simplifies navigation, ticketing, and real-time updates for commuters. Explore the UI screens to see how each feature works seamlessly for a smooth, user-friendly journey.
+      </p>
+
+      <h1 class="title">
+        Designing Interfaces for<br><span class="seamless">Intuitive</span> Journeys
+      </h1>
+    </div>
+    <br><br><br>
+
+    <div class="screens-container">
+      <img class="screens-image" src="final poster.png" alt="Modern screens">
+    </div>
+<br><br><br><br>
+
+  <footer class="new-footer">
+    <a href="work 2.html" class="back-to-top-btn">
+      Back to Top <img src="scroll up.png" alt="Up arrow">
+  </a>
+    <a href="contact.html" class="contact-button">Contact</a>
+    <div class="social-links">
+        <a href="https://www.instagram.com/manvi_hemanth/"><img src="insta bw.png" alt="Instagram"></a>
+        <a href="https://www.behance.net/manvihemanth"><img src="behance bw.png" alt="Behance"></a>
+        <a href="https://x.com/Manvi94292172"><img src="twittter bw.png" alt="Twitter"></a>
+        <a href="https://www.linkedin.com/in/manvi-hemanth-b18837333/"><img src="linkdn bw.png" alt="LinkedIn"></a>
+    </div>
+    <div class="divider"></div>
+    <p class="author">Manvi Hemanth</p>
+    <p class="copyright">©2020-2024 Manvi_hemanth.com All rights Reserved.</p>
+</footer>
+</body>
+</html>

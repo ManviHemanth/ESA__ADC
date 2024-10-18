@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manvi Hemanth - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Poppins:wght@300;400;600;700&family=Grantha+Sangam+MN&family=Zapfino&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'GFS Didot', serif;
+             color: #333;
+            background-color: #FFFBF5;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 4rem;
+            position: relative;
+        }
+
+        .logo {
+            font-family: 'poppins', serif;
+            font-size: 1.5rem;
+            color: rgb(0, 0, 0);
+        }
+
+        .nav {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            position: relative;
+            padding-bottom: 0.25rem;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #f4bf20;
+            transition: width 0.3s ease;
+        }
+
+        .nav a:hover::after,
+        .nav a.active::after {
+            width: 100%;
+        }
+
+        .about-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #ffffff, #f8e5b8, #fff4bc);
+            opacity: 0.34;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #000000;
+        }
+
+        .content {
+            width: 50%;
+        }
+
+        .hey {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: 'GFS Didot', serif;
+            font-size: 5em;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        p {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .image-section {
+            width: 45%;
+        }
+
+        .image-section img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+            background-color: black;
+            padding: 30px 0;
+            margin: 0;
+            font-weight: normal;
+            margin-top: -50px; 
+        }
+
+        .skills {
+            display: flex;
+            justify-content: space-between;
+            background-color: black;
+            padding: 30px 100px 50px;
+            flex-wrap: wrap;
+        }
+
+        .skill-box {
+            width: 60px;
+            height: 60px;
+            background-color: #000000;
+            margin: 10px;
+            transition: transform 0.3s ease;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .skill-box:hover {
+            transform: scale(1.1);
+        }
+
+        .new-footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .back-to-top-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background-color: transparent;
+            color: #fff;
+            text-decoration: none;
+            border: 2px solid #EBBB74;
+            border-radius: 25px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .back-to-top-btn:hover {
+            background-color: #EBBB74;
+            color: #000;
+        }
+
+        .back-to-top-btn img {
+            width: 20px;
+            height: 20px;
+            margin-left: 8px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 10px 40px;
+            background-color: transparent;
+            color: #EBBB74;
+            border: 2px solid #EBBB74;
+            border-radius: 25px;
+            font-size: 18px;
+            text-decoration: none;
+            margin-bottom: 30px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .contact-button:hover {
+            background-color: #EBBB74;
+            color: #000;
+        }
+
+        .social-links {
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .social-links img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: #333;
+            margin-bottom: 20px;
+        }
+
+        .author {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .copyright {
+            font-size: 14px;
+            color: #9D9B9B;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column-reverse;
+            }
+
+            .content, .image-section {
+                width: 100%;
+                margin-bottom: 40px;
+            }
+
+            h1 {
+                font-size: 3em;
+            }
+
+            .skills {
+                padding: 30px 50px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem;
+            }
+
+            .nav {
+                position: static;
+                transform: none;
+                margin-top: 1rem;
+            }
+
+            .skills {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Manvi Hemanth</div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About me</a>
+            <a href="work.html">Works</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="content">
+                    <div class="hey">Hey!</div>
+                    <h1>I'M<br>MANVI</h1>
+                    <p>
+                        A Passionate Designer Specializing in UI/UX and Interaction Design.
+                        As a designer, I'm deeply committed to creating user-friendly digital 
+                        experiences that are both functional and visually appealing. I thrive 
+                        on understanding user needs and translating them into intuitive interfaces.
+                    </p>
+                    <p>
+                        My strong problem-solving skills and collaborative mindset allow me to 
+                        contribute effectively in team settings, where I love sharing innovative 
+                        ideas and working together to achieve our goals. I'm always eager to learn 
+                        and grow in my field, and I strive to deliver impactful designs that 
+                        harmonize aesthetics with usability.
+                    </p>
+                    
+                </div>
+                <div class="image-section">
+                    <img src="Remove background project-2.png" alt="Manvi Hemanth">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Software Skills</h2>
+    <div class="skills">
+        <div class="skill-box" style="background-image: url('adobe-photoshop-icon.png');"></div>
+        <div class="skill-box" style="background-image: url('adobe-illustrator-icon.png');"></div>
+        <div class="skill-box" style="background-image: url('Logo-adobe-after-effects-cc-circle-vector-PNG.png');"></div>
+        <div class="skill-box" style="background-image: url('SketchUp-Mark-1200pxl-RGB.png');"></div>
+        <div class="skill-box" style="background-image: url('figma-logo-22789 1.png');"></div>
+    </div>
+    
+    <footer class="new-footer">
+        <a href="about.html" class="back-to-top-btn">
+            Back to Top <img src="scroll up.png" alt="Up arrow">
+        </a>
+        <a href="contact.html" class="contact-button">Contact</a>
+        <div class="social-links">
+            <a href="https://www.instagram.com/manvi_hemanth/"><img src="insta bw.png" alt="Instagram"></a>
+            <a href="https://www.behance.net/manvihemanth"><img src="behance bw.png" alt="Behance"></a>
+            <a href="https://x.com/Manvi94292172"><img src="twittter bw.png" alt="Twitter"></a>
+            <a href="https://www.linkedin.com/in/manvi-hemanth-b18837333/"><img src="linkdn bw.png" alt="LinkedIn"></a>
+        </div>
+        <div class="divider"></div>
+        <p class="author">Manvi Hemanth</p>
+        <p class="copyright">©2020-2024 Manvi_hemanth.com All rights Reserved.</p>
+    </footer>
+</body>
+</html>

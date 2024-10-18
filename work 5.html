@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphics Gallery - Manvi Hemanth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Aboreto&display=swap" rel="stylesheet">
+    <style>
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(0, 0, 0);
+    padding: 2rem 4rem;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6rem;
+    position: relative;
+}
+
+.logo {
+    font-family: 'poppins', serif;
+    font-size: 1.5rem;
+    margin-left: -1100px;
+    color: white;
+}
+
+.nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    position: relative;
+    padding-bottom: 0.25rem;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #f4bf20;
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.nav a.active::after {
+    width: 100%;
+}
+
+.content-wrapper {
+    margin-left: 2rem;
+    position: relative;
+}
+
+.number {
+    font-family: 'Poppins', sans-serif;
+    font-size: 300px;
+    font-weight: 600;
+    color: #818181;
+    opacity: 0.5;
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    line-height: 1;
+    z-index: 1;
+}
+
+.text-content {
+    position: relative;
+    z-index: 2;
+    margin-left: 22rem;
+}
+
+.description {
+    font-weight: 300;
+    font-size: 1.25rem;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-top: 20px;
+    text-align: justify;
+    color: #c4c4c4;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+
+.seamless {
+    font-family: "Zapfino", cursive;
+    color: #8c0303;
+    display: inline;
+    font-size: 4.5rem;
+}
+
+.gallery-header {
+    text-align: center;
+    margin: 6rem 0 4rem;
+}
+
+.gallery-header h1 {
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.gallery-header p {
+    font-size: 18px;
+    color: #999898;
+}
+
+.gallery-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+}
+
+.row-1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.row-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.row-2 .gallery-item {
+    aspect-ratio: 3/4; 
+}
+
+.row-3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    background: #222;
+    border-radius: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.new-footer {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 6rem;
+}
+
+.back-to-top-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #EBBB74;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.back-to-top-btn:hover {
+    background-color: #EBBB74;
+    color: #212121;
+}
+
+.back-to-top-btn img {
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 10px 40px;
+    background-color: transparent;
+    color: #EBBB74;
+    border: 2px solid #EBBB74;
+    border-radius: 25px;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #EBBB74;
+    color: #000;
+}
+
+.social-links {
+    margin: 30px 0;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-links img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: #333;
+    margin: 20px 0;
+}
+
+.author {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.copyright {
+    font-size: 14px;
+    color: #9D9B9B;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 1200px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 2rem;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 1rem;
+        position: relative;
+        left: 0;
+        transform: none;
+    }
+
+    .logo {
+        margin-left: 0;
+        font-size: 1.2rem;
+    }
+
+    .number {
+        font-size: 200px;
+    }
+
+    .text-content {
+        margin-left: 0;
+    }
+
+    .title {
+        font-size: 3rem;
+        margin-left: 20px;
+    }
+
+    .description {
+        font-size: 1rem;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .gallery-grid {
+        gap: 1rem;
+    }
+
+    .row-1,
+    .row-2,
+    .row-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .nav {
+        gap: 0.5rem;
+    }
+
+    .number {
+        font-size: 150px;
+    }
+
+    .title {
+        font-size: 2rem;
+        margin-left: 10px;
+    }
+
+    .description {
+        font-size: 0.9rem;
+        margin-left: 10px;
+    }
+
+    .gallery-grid {
+        gap: 0.5rem;
+    }
+
+    .new-footer {
+        padding: 20px;
+    }
+
+    .back-to-top-btn {
+        padding: 8px 20px;
+    }
+
+    .contact-button {
+        padding: 8px 30px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Manvi Hemanth</div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About me</a>
+            <a href="work.html" class="active">Works</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="number">05</div>
+        <div class="text-content">
+            <p class="description">
+                Explore a showcase of my graphic design expertise, where creativity and precision meet. From bold branding to captivating visuals, see the full range of my design skills in action
+            </p>
+            <h1 class="title">
+                Where <span class="seamless">Creativity</span><br>
+                meets design
+            </h1>
+        </div>
+    </div>
+<br><br><br><br>
+    <div class="gallery-header">
+        <h1>Graphics Gallery</h1>
+        <p>A Visual Journey Through Imagination</p>
+    </div>
+
+    <div class="gallery-grid">
+        <div class="row-1">
+            <div class="gallery-item">
+                <img src="g1.png" alt="Standard Design">
+            </div>
+            <div class="gallery-item">
+                <img src="g2.png" alt="Cube Design">
+            </div>
+        </div>
+        
+        <div class="row-2">
+            <div class="gallery-item">
+                <img src="g3.png" alt="Typography 1">
+            </div>
+            <div class="gallery-item">
+                <img src="g4.png" alt="Typography 2">
+            </div>
+            <div class="gallery-item">
+                <img src="g5.png" alt="Typography 3">
+            </div>
+        </div>
+        
+        <div class="row-3">
+            <div class="gallery-item">
+                <img src="g6.png" alt="Book Design 1">
+            </div>
+            <div class="gallery-item">
+                <img src="g7.png" alt="Book Design 2">
+            </div>
+        </div>
+    </div>
+
+    <footer class="new-footer">
+        <a href="work 5.html" class="back-to-top-btn">
+            Back to Top <img src="scroll up.png" alt="Up arrow">
+        </a>
+        <a href="contact.html" class="contact-button">Contact</a>
+        <div class="social-links">
+            <a href="https://www.instagram.com/manvi_hemanth/"><img src="insta bw.png" alt="Instagram"></a>
+            <a href="https://www.behance.net/manvihemanth"><img src="behance bw.png" alt="Behance"></a>
+            <a href="https://x.com/Manvi94292172"><img src="twittter bw.png" alt="Twitter"></a>
+            <a href="https://www.linkedin.com/in/manvi-hemanth-b18837333/"><img src="linkdn bw.png" alt="LinkedIn"></a>
+        </div>
+        <div class="divider"></div>
+        <p class="author">Manvi Hemanth</p>
+        <p class="copyright">©2020-2024 Manvi_hemanth.com All rights Reserved.</p>
+    </footer>
+</body>
+</html>

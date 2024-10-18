@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manvi Hemanth - Works & Cooking Wireframe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Aboreto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #FFF7EC;
+      padding: 2rem 4rem;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6rem;
+    }
+
+    .logo {
+      font-family: 'poppins', serif;
+      font-size: 1.5rem;
+    }
+
+    .nav {
+      display: flex;
+      gap: 2.5rem;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #000000;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: black;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      position: relative;
+      padding-bottom: 0.25rem;
+    }
+
+    .nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: #f4bf20;
+      transition: width 0.3s ease;
+    }
+
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav a.active::after {
+      width: 100%;
+    }
+
+    .content-wrapper {
+      margin-left: 2rem;
+      position: relative;
+    }
+
+    .number {
+      font-family: 'Poppins', sans-serif;
+      font-size: 300px;
+      font-weight: 600;
+      color: #FF8E00;
+      opacity: 0.5;
+      position: absolute;
+      top: -2rem;
+      left: 0;
+      line-height: 1;
+      z-index: 1;
+    }
+
+    .text-content {
+      position: relative;
+      z-index: 2;
+      margin-left: 22rem;
+    }
+
+    .description {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 1.25rem;
+      max-width: 800px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      margin-left: 40px;
+      margin-top: 20px;
+      text-align: justify;
+    }
+
+    .title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 4rem;
+      font-weight: 300;
+      line-height: 1.2;
+      margin-left: 40px;
+      margin-top: 30px;
+      line-height: 120px;
+    }
+
+    .Hybrid {
+      font-family: "Zapfino", cursive;
+      color: #FF8E00;
+      display: inline;
+      font-size: 4.5rem;
+    }
+
+    .stove-image {
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      border-radius: 1rem;
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+    }
+
+    .mobile-screens-image {
+      width: 1000%;
+      max-width: 1000px;
+      height: 1000px;
+      border-radius: 1rem;
+      display: block;
+      margin: 0 auto;
+      object-fit: contain; 
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+
+    .magical-button {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      padding: 0.8rem 2rem;
+      border: 3px solid #000;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .magical-button:hover {
+      border: 4px solid #FF8E00;
+      color: #FF8E00;
+      margin: -1px;
+    }
+
+    .image-toggle {
+      display: none;
+    }
+
+    .image-container {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out;
+    }
+
+    .image-toggle:checked + .image-container {
+      max-height: 1000px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header.text-center {
+      text-align: center;
+    }
+
+    .heading {
+      text-align: left;
+      font-size: 64px;
+      font-weight: 600;
+      color: #FF8E00;
+      margin: 0;
+    }
+
+    .subtitle {
+      text-align: left;
+      font-size: 18px;
+      font-weight: 300;
+      color: #3F3D3D;
+      margin: 0;
+    }
+
+    .footer-title-btn {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #000;
+      margin-bottom: 20px;
+      cursor: pointer;
+      padding: 10px 20px;
+      border: 2px solid #000;
+      background-color: transparent;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .footer-title-btn:hover {
+      background-color: #FF8E00;
+      color: #FFF;
+    }
+
+    #toggle-content {
+      display: none;
+    }
+
+    .footer-subtitle {
+      display: none;
+      text-align: left;
+      font-size: 0.9rem;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    #toggle-content:checked ~ .footer-subtitle {
+      display: block;
+    }
+
+    .new-footer {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .connect-text {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 10px 40px;
+      background-color: transparent;
+      color: #EBBB74;
+      border: 2px solid #EBBB74;
+      border-radius: 25px;
+      font-size: 18px;
+      text-decoration: none;
+      margin-bottom: 30px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .contact-button:hover {
+      background-color: #EBBB74;
+      color: #000;
+    }
+
+    .social-links {
+      margin-bottom: 30px;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .social-links img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background-color: #333;
+      margin-bottom: 20px;
+    }
+
+    .author {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .copyright {
+      font-size: 14px;
+      color: #9D9B9B;
+    }
+
+    .back-to-top-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      background-color: transparent;
+      color: #fff;
+      text-decoration: none;
+      border: 2px solid #EBBB74;
+      border-radius: 25px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    .back-to-top-btn:hover {
+      background-color: #EBBB74;
+      color: #000;
+    }
+
+    .back-to-top-btn img {
+      width: 20px;
+      height: 20px;
+      margin-left: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Manvi Hemanth</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About me</a>
+      <a href="work.html" class="active">Works</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="content-wrapper">
+    <div class="number">03</div>
+    
+    <div class="text-content">
+      <p class="description">
+        My group and I developed "Woodcut Blitz," a hybrid casual game that tests reflexes and skill. In each challenge, players throw knives at a rotating board, aiming to avoid hitting other knives or objects attached to it. The goal is to throw all knives accurately to complete each level.
+      </p>
+
+      <h1 class="title">
+        Building a <span class="Hybrid">Hybrid Casual</span> game
+      </h1>
+    </div>
+    <div class="stove-image-container">
+      <img class="stove-image" src="Instagram post - 1.jpg" alt="Modern stove interface">
+    </div>
+<br><br><br>
+<div class="button-container">
+  <label for="toggle-image" class="magical-button">Gaming Screens</label>
+</div>
+<br><br><br>
+<input type="checkbox" id="toggle-image" class="image-toggle">
+<div class="image-container">
+  <img class="mobile-screens-image" src="mobiles screeens.png" alt="Gaming Screen">
+</div>
+      
+    </div>
+  </div>
+  <br><br><br>
+  
+  <div class="container">
+    <div class="header text-center"> 
+      <h1 class="heading">About level progression</h1><br>
+      <p class="subtitle">
+        <br>▪️   First Level:<br>
+          - Board moves back and forth with an easy start.<br>
+          - Player loses only if the knife hits the bomb.
+       <br>
+       ▪️   20th Level:<br>
+          - Introduces a bowl filled with a mixture of bombs and fruits on both sides.<br>
+          - Objective is to hit only the fruits, adding complexity.
+       <br>
+       ▪️   100th Level:<br>
+          - Features an arced board with a safe area for knife hits in between.<br>
+          - Incorporates wind factor, requiring precise angle adjustments for successful hits.
+      </p>
+    </div>
+    <br><br><br>
+    <input type="checkbox" id="toggle-content">
+    <label for="toggle-content" class="footer-title-btn">
+      Approach to Building the Hybrid Casual Game 🎯
+    </label>
+    
+    <div class="footer-subtitle">
+      <p>📌 Reference Game Knife Hit: We chose Knife Hit as our reference game due to its simple yet addictive mechanics, making it an ideal candidate for modification and enhancement.</p>
+      <p>📌 Simplification Approach: Our primary focus was on simplifying the mechanics of Knife Hit while retaining its core elements. By streamlining the gameplay and user interface, we aimed to create a more accessible and enjoyable experience for players.</p>
+      <p>📌 Unique Features Addition: Alongside simplification, we incorporated unique features such as thematic shifts, expanded knife collections, and dynamic difficulty to add depth and variety to the gameplay, ensuring long-term player engagement.</p>
+      <p>📌 Meta Loops Integration: While our main emphasis was on simplifying the game, we also integrated meta loops such as diverse boards and dynamic difficulty to enhance player engagement and encourage continued play.</p>
+    </div>
+  </div>
+
+  <br><br><br><br><br>
+  <footer class="new-footer">
+    <a href="work 3.html" class="back-to-top-btn">
+      Back to Top <img src="scroll up.png" alt="Up arrow">
+    </a>
+    <a href="contact.html" class="contact-button">Contact</a>
+    <div class="social-links">
+        <a href="https://www.instagram.com/manvi_hemanth/"><img src="insta bw.png" alt="Instagram"></a>
+        <a href="https://www.behance.net/manvihemanth"><img src="behance bw.png" alt="Behance"></a>
+        <a href="https://x.com/Manvi94292172"><img src="twittter bw.png" alt="Twitter"></a>
+        <a href="https://www.linkedin.com/in/manvi-hemanth-b18837333/"><img src="linkdn bw.png" alt="LinkedIn"></a>
+    </div>
+    <div class="divider"></div>
+    <p class="author">Manvi Hemanth</p>
+    <p class="copyright">©2020-2024 Manvi_hemanth.com All rights Reserved.</p>
+  </footer>
+</body>
+</html>

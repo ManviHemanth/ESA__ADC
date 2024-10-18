@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manvi Hemanth - Works & Cooking Wireframe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Aboreto&display=swap" rel="stylesheet">
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: white;
+      padding: 2rem 4rem;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6rem;
+    }
+
+    .logo {
+      font-family: 'poppins', serif;
+      font-size: 1.5rem;
+      margin-left: -1100px;
+    }
+
+    .nav {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: black;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      position: relative;
+      padding-bottom: 0.25rem;
+    }
+
+    .nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: #f4bf20;
+      transition: width 0.3s ease;
+    }
+
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav a.active::after {
+      width: 100%;
+    }
+
+    .content-wrapper {
+      margin-left: 2rem;
+      position: relative;
+    }
+
+    .number {
+      font-family: 'Poppins', sans-serif;
+      font-size: 300px;
+      font-weight: 600;
+      color: #9697BD;
+      opacity: 0.5;
+      position: absolute;
+      top: -2rem;
+      left: 0;
+      line-height: 1;
+      z-index: 1;
+    }
+
+    .text-content {
+      position: relative;
+      z-index: 2;
+      margin-left: 22rem;
+    }
+
+    .description {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 1.25rem;
+      max-width: 800px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 4rem;
+      font-weight: 300;
+      line-height: 1.2;
+    }
+
+    .seamless {
+      font-family: "Zapfino", cursive;
+      color: #0F1598;
+      display: inline;
+      font-size: 4.5rem;
+    }
+
+    .stove-image-container {
+      width: 100%;
+      padding: 1rem;
+      background: white;
+      border-radius: 2rem;
+      margin: 4rem 0;
+    }
+
+    .stove-image {
+      width: 100%; 
+      max-width: 80%; 
+      height: auto;
+      border-radius: 1.5rem;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+
+    .magical-button {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      padding: 0.8rem 2rem;
+      border: 1px solid #000;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .magical-button:hover {
+      border: 2px solid #9C0AFD;
+      color: #9C0AFD;
+      margin: -1px;
+    }
+
+    .magical-features {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.6s ease-out, opacity 0.6s ease-out;
+      margin-top: 3rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .magical-features.show {
+      max-height: 2000px; 
+      opacity: 1;
+      transition: max-height 0.6s ease-in, opacity 0.6s ease-in;
+    }
+
+    .feature-card {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding: 2rem;
+      border-radius: 1rem;
+      background-color: rgba(255, 255, 255, 0.5); 
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: scale(1.05);
+      background-color: rgba(255, 255, 255, 1); 
+    }
+
+    .feature-icon {
+      width: 100px;
+      height: 100px;
+      margin-right: 2rem;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
+
+    .feature-content {
+      flex-grow: 1;
+    }
+
+    .feature-content h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-content p {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.4;
+    }
+    
+
+    #boostBurner { background-color: rgba(0, 0, 0, 0.5); color: white; }
+    #boostBurner:hover { background-color: rgba(0, 0, 0, 1); }
+    
+    #heatGuard { background-color: rgba(255, 213, 213, 0.5); }
+    #heatGuard:hover { background-color: rgba(255, 213, 213, 1); }
+    
+    #simmerSafe { background-color: rgba(255, 242, 222, 0.5); }
+    #simmerSafe:hover { background-color: rgba(255, 242, 222, 1); }
+    
+    #voiceAssistance { background-color: rgba(243, 241, 255, 0.5); }
+    #voiceAssistance:hover { background-color: rgba(243, 241, 255, 1); }
+    
+    #ultraDisplay { background-color: rgba(253, 255, 239, 0.5); }
+    #ultraDisplay:hover { background-color: rgba(253, 255, 239, 1); }
+
+    #magicalFeatures:focus {
+      outline: none;
+      scroll-margin-top: 2rem; 
+    }
+   
+    .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        .heading {
+            text-align: center;
+            font-size: 76px;
+            font-weight: 600;
+            color: #A40AC3;
+            margin: 0;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 300;
+            color: #3F3D3D;
+            margin: 0;
+        }
+        .star {
+            width: 24px;
+            height: 24px;
+            background-color: #F2CAFF;
+            position: absolute;
+            transform: rotate(45deg);
+            border-radius: 5px;
+        }
+        .star1 {
+         top: 10px;
+         right: 20%;
+         left: auto;
+         }
+
+        .star2 {
+        bottom: 10px;
+        left: 20%;
+         }
+         
+        .wireframes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .wireframe {
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .wireframe img {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+        }
+        .footer {
+            text-align: center;
+        }
+        .footer-title {
+            font-size: 48px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 20px;
+        }
+        .footer-subtitle {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .footer-brand {
+            font-family: 'Aboreto', cursive;
+            font-size: 48px;
+        }
+        .footer img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .new-footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #000;
+            color: #fff;
+        }
+        .connect-text {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .contact-button {
+            display: inline-block;
+            padding: 10px 40px;
+            background-color: transparent;
+            color: #EBBB74;
+            border: 2px solid #EBBB74;
+            border-radius: 25px;
+            font-size: 18px;
+            text-decoration: none;
+            margin-bottom: 30px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .contact-button:hover {
+            background-color: #EBBB74;
+            color: #000;
+        }
+        .social-links {
+            margin-bottom: 30px;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        .social-links img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: #333;
+            margin-bottom: 20px;
+        }
+        .author {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .copyright {
+            font-size: 14px;
+            color: #9D9B9B;
+        }
+       
+        
+        .text-center {
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 40px;
+    padding: 20px 0;
+}
+
+.back-to-top-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #EBBB74;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.back-to-top-btn:hover {
+    background-color: #EBBB74;
+    color: #000;
+}
+
+.back-to-top-btn img {
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+}
+@media only screen and (max-width: 1200px) {
+    body {
+      padding: 2rem;
+    }
+
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .logo {
+      margin-left: 0;
+      margin-bottom: 1rem;
+    }
+
+    .nav {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .content-wrapper {
+      margin-left: 1rem;
+    }
+
+    .text-content {
+      margin-left: 0;
+    }
+
+    .number {
+      font-size: 150px;
+      top: -1rem;
+    }
+
+    .description {
+      font-size: 1.1rem;
+    }
+
+    .title {
+      font-size: 3rem;
+    }
+
+    .stove-image {
+      max-width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    body {
+      padding: 1.5rem;
+    }
+
+    .nav {
+      gap: 1rem;
+    }
+
+    .number {
+      font-size: 100px;
+      left: -10px;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+
+    .title {
+      font-size: 2.5rem;
+    }
+
+    .stove-image {
+      width: 100%;
+    }
+
+    .magical-button {
+      font-size: 1rem;
+      padding: 0.6rem 1.5rem;
+    }
+
+    .wireframes {
+      grid-template-columns: 1fr;
+    }
+
+    .wireframe img {
+      height: 250px;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    body {
+      padding: 1rem;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+    }
+
+    .nav {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .number {
+      font-size: 80px;
+      top: -1rem;
+    }
+
+    .description {
+      font-size: 0.9rem;
+    }
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .stove-image {
+      max-width: 100%;
+    }
+
+    .magical-button {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+
+    .wireframes {
+      grid-template-columns: 1fr;
+    }
+
+    .wireframe img {
+      height: 200px;
+    }
+
+    .footer-title {
+      font-size: 2.5rem;
+    }
+
+    .footer-subtitle {
+      font-size: 18px;
+    }
+
+    .contact-button {
+      font-size: 16px;
+    }
+
+    .author {
+      font-size: 18px;
+    }
+
+    .copyright {
+      font-size: 12px;
+    }
+  }
+</style>
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Manvi Hemanth</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About me</a>
+      <a href="work.html" class="active">Works</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="content-wrapper">
+    <div class="number">01</div>
+    
+    <div class="text-content">
+      <p class="description">
+        I developed a modern, user-centered redesign of traditional cooking ranges by digitizing the interface, incorporating voice-activated assistance, recipe guidance, and enhanced multitasking features for a stove.
+      </p>
+
+      <h1 class="title">
+        Efficient and <span class="seamless">Seamless</span><br>
+        cooking experience
+      </h1>
+    </div>
+
+    <div class="stove-image-container">
+      <img class="stove-image" src="stove.png" alt="Modern stove interface">
+    </div>
+<br><br>
+    <div class="button-container">
+      <button class="magical-button" onclick="toggleMagicalFeatures()">Magical Features</button>
+    </div>
+
+    <div id="magicalFeatures" class="magical-features" tabindex="-1">
+      <div id="boostBurner" class="feature-card">
+        <img src="feature 1.png" alt="BoostBurner Icon" class="feature-icon">
+        <div class="feature-content">
+          <h3>BoostBurner</h3>
+          <p>A 5th digital burner inspired by induction technology for quick heating and multitasking.</p>
+        </div>
+      </div>
+      <div id="heatGuard" class="feature-card">
+        <img src="feature 2.png" alt="HeatGuard Icon" class="feature-icon">
+        <div class="feature-content">
+          <h3>HeatGuard</h3>
+          <p>Ensures safe cooking by automatically lowering heat to prevent overheating and accidents.</p>
+        </div>
+      </div>
+      <div id="simmerSafe" class="feature-card">
+        <img src="feature 3.png" alt="SimmerSafe Icon" class="feature-icon">
+        <div class="feature-content">
+          <h3>SimmerSafe</h3>
+          <p>One-touch flame reduction switch for instant heat control across all burners.</p>
+        </div>
+      </div>
+      <div id="voiceAssistance" class="feature-card">
+        <img src="feature 4.png" alt="Voice-Activated Assistance Icon" class="feature-icon">
+        <div class="feature-content">
+          <h3>Voice-Activated Assistance (Meta)</h3>
+          <p>Hands-free voice control for recipe navigation and heat adjustments.</p>
+        </div>
+      </div>
+      <div id="ultraDisplay" class="feature-card">
+        <img src="feature 5.png" alt="4K Ultra Digital Display Icon" class="feature-icon">
+        <div class="feature-content">
+          <h3>4K Ultra Digital Display</h3>
+          <p>A touchscreen interface with inbuilt recipes and step-by-step cooking instructions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br><br><br>
+  <div class="container">
+    <div class="header text-center">
+        <h1 class="heading">Wireframes</h1>
+        <p class="subtitle">Designing a detailed, intricate interface</p>
+        <div class="star star1"></div>
+        <div class="star star2"></div>
+    </div>
+    <br><br>
+    <div class="wireframes">
+      <div class="wireframe">
+        <img src="4.png" alt="Adventure Of Delicacies">
+      </div>
+      <div class="wireframe">
+        <img src="2.png" alt="Meta Quick Search">
+      </div>
+      <div class="wireframe">
+        <img src="title3.png" alt="Culinara">
+      </div>
+      <div class="wireframe">
+        <img src="1.png" alt="Fuel Your body with Healthy Choices">
+      </div>
+      <div class="wireframe">
+        <img src="6.png" alt="Become a true Chef">
+      </div>
+      <div class="wireframe">
+        <img src="5.png" alt="Recipe Details">
+      </div>
+    </div>
+    <br><br>
+    <footer class="footer">
+      <h2 class="footer-title">Turning Your Cooking<br>into love 💛</h2>
+      <img src="mom and kid.png" alt="Mother and daughter cooking">
+      <br><br>
+      <div class="footer-subtitle">Master Every Meal with Elegance with
+      <div class="footer-brand">CULINARA
+    </footer>
+  </div>
+
+ <br><br><br>
+  <footer class="new-footer">
+    <a href="work 1.html" class="back-to-top-btn">
+      Back to Top <img src="scroll up.png" alt="Up arrow">
+  </a>
+    <a href="contact.html" class="contact-button">Contact</a>
+    <div class="social-links">
+        <a href="https://www.instagram.com/manvi_hemanth/"><img src="insta bw.png" alt="Instagram"></a>
+        <a href="https://www.behance.net/manvihemanth"><img src="behance bw.png" alt="Behance"></a>
+        <a href="https://x.com/Manvi94292172"><img src="twittter bw.png" alt="Twitter"></a>
+        <a href="https://www.linkedin.com/in/manvi-hemanth-b18837333/"><img src="linkdn bw.png" alt="LinkedIn"></a>
+    </div>
+    <div class="divider"></div>
+    <p class="author">Manvi Hemanth</p>
+    <p class="copyright">©2020-2024 Manvi_hemanth.com All rights Reserved.</p>
+</footer>
+
+  <script>
+    function toggleMagicalFeatures() {
+      const magicalFeatures = document.getElementById('magicalFeatures');
+      magicalFeatures.classList.toggle('show');
+      if (magicalFeatures.classList.contains('show')) {
+        magicalFeatures.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+</body>
+</html>
